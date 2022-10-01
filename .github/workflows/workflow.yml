@@ -21,5 +21,3 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages      
         image-name: my-cool-service # Provide Docker image name
         custom-args: --build-arg SOME_BUILD_ARG="NEW-VALUE" # Pass "NEW VALUE" into the SOME_BUILD_ARG
-
-docker build 
