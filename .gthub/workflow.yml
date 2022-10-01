@@ -2,6 +2,10 @@ build-with-build-arg:
   runs-on: ubuntu-latest
   
   steps:
+  - uses: actions/checkout@v2 # Checking out the repo
+
   - name: Build and publish Docker Images to GitHub Container registry
     uses: VaultVulp/gp-docker-action@1.2.0
-    custom-args: --build-arg SOME_BUILD_ARG="NEW VALUE" # Pass "NEW VALUE" into the SOME_BUILD_ARG
+    with:
+      github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages      
+      custom-args: --build-arg SOME_BUILD_ARG="NEW VALUE" # Pass "NEW VALUE" into the SOME_BUILD_ARG
