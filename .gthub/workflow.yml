@@ -1,0 +1,7 @@
+build-with-build-arg:
+  runs-on: ubuntu-latest
+  
+  steps:
+  - name: Build and publish Docker Images to GitHub Container registry
+    uses: VaultVulp/gp-docker-action@1.2.0
+    custom-args: --build-arg SOME_BUILD_ARG="NEW VALUE" # Pass "NEW VALUE" into the SOME_BUILD_ARG
