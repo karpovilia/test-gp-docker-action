@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2 # Checking out the repo
+    - uses: actions/checkout@v2.5.0 # Checking out the repo
 
     - name: Build and Publish head Docker image
       uses: VaultVulp/gp-docker-action@303c2a53c954df1dd47685b4a68509a2b2e1058b
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2 # Checking out the repo
+    - uses: actions/checkout@v2.5.0 # Checking out the repo
 
     - name: Build and Publish latest Docker image
       uses: VaultVulp/gp-docker-action@303c2a53c954df1dd47685b4a68509a2b2e1058b
@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2 # Checking out the repo
+    - uses: actions/checkout@v2.5.0 # Checking out the repo
 
     - name: Build and Publish head Docker image
       uses: VaultVulp/gp-docker-action@303c2a53c954df1dd47685b4a68509a2b2e1058b
@@ -49,7 +49,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2 # Checking out the repo
+    - uses: actions/checkout@v2.5.0 # Checking out the repo
 
     - name: Build and Publish head Docker image
       uses: VaultVulp/gp-docker-action@303c2a53c954df1dd47685b4a68509a2b2e1058b
@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v2 # Checking out the repo
+    - uses: actions/checkout@v2.5.0 # Checking out the repo
 
     - name: Build and publish Docker Images to GitHub Container registry
       uses: VaultVulp/gp-docker-action@303c2a53c954df1dd47685b4a68509a2b2e1058b
