@@ -1,4 +1,4 @@
-name: Build with custom argument
+name: Build and publish on the master branch
 
 on: 
   push:
