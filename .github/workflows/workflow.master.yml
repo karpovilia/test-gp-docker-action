@@ -1,6 +1,9 @@
 name: Build with custom argument
 
-on: push
+on: 
+  push:
+    branches:
+    - "master"
 
 jobs:
   build-and-publish-head:
@@ -18,7 +21,6 @@ jobs:
 
   build-and-publish-latest:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master' # Running this job only for master branch
 
     steps:
     - uses: actions/checkout@v2 # Checking out the repo
@@ -30,20 +32,6 @@ jobs:
         image-name: my-cool-service # Provide only Docker image name, tag will be automatically set to latest
         dockerfile: Secondary.Dockerfile
   
-  build-and-publish-tag:
-    runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/') # Running this job only for tags
-
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Build and Publish Tag Docker image
-      uses: VaultVulp/gp-docker-action@1.2.0
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
-        image-name: my-cool-service # Provide only Docker image name
-        extract-git-tag: true # Provide flag to extract Docker image tag from git reference
-
   build-with-custom-context-dev:
     runs-on: ubuntu-latest
 
@@ -82,4 +70,4 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages      
         image-name: my-cool-service # Provide Docker image name
         custom-args: --build-arg=SOME_BUILD_ARG="NEW-VALUE" --build-arg=APP_BUILD_RUNTIME="linux-arm" --build-arg=DOCKER_BUILD_RUNTIME="mcr.microsoft.com/dotnet/runtime:6.0.3-bullseye-slim-arm64v8" --build-arg=DOCKER_BUILD_SDK="mcr.microsoft.com/dotnet/sdk:6.0.201-bullseye-slim-arm64v8"
- # Pass "NEW VALUE" into the SOME_BUILD_ARG
+        # Pass "NEW VALUE" into the SOME_BUILD_ARG
