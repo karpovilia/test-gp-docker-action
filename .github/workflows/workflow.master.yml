@@ -99,4 +99,4 @@ jobs:
         image-name: my-cool-service # Provide Docker image name
         image-tag: arm64 # Provide Docker image tag
         dockerfile: arm64.Dockerfile  # Provide Dockerfile for ARM64
-        custom-args: --platform=linux/arm64/v7,linux/arm64/v9 # specify architecture(s) via the custom-args agrument
+        custom-args: --platform=linux/arm64,linux/amd64 # specify target architectures via the custom-args agrument
