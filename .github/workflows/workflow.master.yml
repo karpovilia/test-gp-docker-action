@@ -100,3 +100,20 @@ jobs:
         image-tag: arm64 # Provide Docker image tag
         dockerfile: arm64.Dockerfile  # Provide Dockerfile for ARM64
         custom-args: --platform=linux/arm64,linux/amd64 # specify target architectures via the custom-args agrument
+
+  build-and-pull-multiple-platforms:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2.5.0 # Checking out the repo
+
+    - name: Build and Publish ARM64 image
+      uses: VaultVulp/gp-docker-action@develop
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
+        image-name: my-cool-service # Provide Docker image name
+        image-tag: arm64-pull # Provide Docker image tag
+        dockerfile: arm64.Dockerfile  # Provide Dockerfile for ARM64
+        docker-iamge-platform: linux/arm64,linux/amd64 # specify target architectures via the custom-args agrument
+        pull: true
+
