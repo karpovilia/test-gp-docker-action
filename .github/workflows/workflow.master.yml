@@ -114,6 +114,6 @@ jobs:
         image-name: my-cool-service # Provide Docker image name
         image-tag: arm64-pull # Provide Docker image tag
         dockerfile: arm64.Dockerfile  # Provide Dockerfile for ARM64
-        image-platform:: linux/arm64,linux/amd64 # specify target architectures via the custom-args agrument
+        image-platform: linux/arm64,linux/amd64 # specify target architectures via the custom-args agrument
         pull-image: true
 
