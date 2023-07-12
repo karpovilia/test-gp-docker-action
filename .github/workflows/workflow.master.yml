@@ -16,7 +16,7 @@ jobs:
       uses: VaultVulp/gp-docker-action@1.6.0
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
-        image-name: my-cool-service # Provide Docker image name
+        image-name: my-cool-service-ki # Provide Docker image name
         image-tag: head # Provide Docker image tag
 
   build-and-publish-latest:
@@ -29,7 +29,7 @@ jobs:
       uses: VaultVulp/gp-docker-action@1.6.0
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
-        image-name: my-cool-service # Provide only Docker image name, tag will be automatically set to latest
+        image-name: my-cool-service-ki # Provide only Docker image name, tag will be automatically set to latest
         dockerfile: Secondary.Dockerfile
   
   build-with-custom-context-dev:
@@ -42,7 +42,7 @@ jobs:
       uses: VaultVulp/gp-docker-action@1.6.0
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
-        image-name: my-cool-service # Provide Docker image name
+        image-name: my-cool-service-ki # Provide Docker image name
         build-context: ./different-context # Provide path to the folder with the Dockerfile
 
   pull-and-build-image:
@@ -55,7 +55,7 @@ jobs:
       uses: VaultVulp/gp-docker-action@1.6.0
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
-        image-name: my-cool-service # Provide Docker image name
+        image-name: my-cool-service-ki # Provide Docker image name
         pull-image: true # Raise the flag to try to pull image
 
   build-with-build-arg:
@@ -68,7 +68,7 @@ jobs:
       uses: VaultVulp/gp-docker-action@1.6.0
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages      
-        image-name: my-cool-service # Provide Docker image name
+        image-name: my-cool-service-ki # Provide Docker image name
         custom-args: --build-arg=SOME_BUILD_ARG="NEW-VALUE" --build-arg=APP_BUILD_RUNTIME="linux-arm" --build-arg=DOCKER_BUILD_RUNTIME="mcr.microsoft.com/dotnet/runtime:6.0.3-bullseye-slim-arm64v8" --build-arg=DOCKER_BUILD_SDK="mcr.microsoft.com/dotnet/sdk:6.0.201-bullseye-slim-arm64v8"
         # Pass "NEW VALUE" into the SOME_BUILD_ARG
         
@@ -82,7 +82,7 @@ jobs:
       uses: VaultVulp/gp-docker-action@1.6.0
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
-        image-name: my-cool-service # Provide Docker image name
+        image-name: my-cool-service-ki # Provide Docker image name
         image-tag: head # Provide Docker image tag
         additional-image-tags: doot foo bar
 
@@ -96,7 +96,7 @@ jobs:
       uses: VaultVulp/gp-docker-action@1.6.0
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
-        image-name: my-cool-service # Provide Docker image name
+        image-name: my-cool-service-ki # Provide Docker image name
         image-tag: arm64 # Provide Docker image tag
         dockerfile: arm64.Dockerfile  # Provide Dockerfile for ARM64
         custom-args: --platform=linux/arm64,linux/amd64 # specify target architectures via the custom-args agrument
@@ -111,7 +111,7 @@ jobs:
       uses: VaultVulp/gp-docker-action@1.6.0
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
-        image-name: my-cool-service # Provide Docker image name
+        image-name: my-cool-service-ki # Provide Docker image name
         image-tag: arm64-pull # Provide Docker image tag
         dockerfile: arm64.Dockerfile  # Provide Dockerfile for ARM64
         image-platform: linux/arm64 # specify target architecture
