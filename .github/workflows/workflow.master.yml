@@ -3,7 +3,7 @@ name: Build and publish on the master branch
 on: 
   push:
     branches:
-    - master
+    - "master"
 
 
 jobs:
