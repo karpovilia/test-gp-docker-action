@@ -6,3 +6,4 @@ RUN apt-get -y install pandoc-citeproc
 RUN apt-get -y install texlive-xetex
 RUN apt-get -y install texlive-lang-cyrillic
 RUN apt-get -y install fonts-cmu
+RUN apt-get -y install jq
